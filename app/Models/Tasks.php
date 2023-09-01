@@ -30,12 +30,12 @@ class Tasks extends Model
 
     public function tag()
     {
-        return $this->belongsTo(Tag::class);
+        return $this->belongsTo(Tags::class);
     }
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Categories::class);
     }
 
 }

@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get("/unauthenticated", function () {
     return response()->json(['message' => 'Unauthenticated'], 401);
 })->name("unauthenticated");
+
 Route::group(['prefix' => 'v1'], function () {
     Route::post('/signup', [AuthController::class, 'signUp']);
     Route::post('/login', [AuthController::class, 'login']);

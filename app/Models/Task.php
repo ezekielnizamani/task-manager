@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tasks extends Model
+class Task extends Model
 {
     use HasFactory;
     protected $table = "tasks";
@@ -30,12 +30,12 @@ class Tasks extends Model
 
     public function tag()
     {
-        return $this->belongsTo(Tags::class);
+        return $this->belongsTo(Tag::class);
     }
 
     public function category()
     {
-        return $this->belongsTo(Categories::class);
+        return $this->belongsTo(Category::class);
     }
 
 }

@@ -33,7 +33,9 @@ Route::group(['prefix' => 'v1'], function () {
 
 Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'v1'], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::get('/tasks', [TasksController::class, 'index']);
-    Route::get('/tasks/{id}', [TasksController::class, 'show']);
     Route::post('/task/create', [TasksController::class, 'store']);
+    Route::put('/task/update/', [TasksController::class, 'store']);
+    Route::get('/tasks/{id}', [TasksController::class, 'show']);
+    Route::get('/tasks', [TasksController::class, 'index']);
+    Route::delete('/tasks/{id}', [TasksController::class, 'delete']);
 });
